@@ -1,0 +1,201 @@
+.active {
+    border-bottom: 4px solid cadetblue;
+    border-radius: 50%;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .navbar-nav .active a {
+        border-bottom: hidden;
+    }
+
+    .navbar-nav .active a:hover {
+        border-bottom: hidden;
+        transform: rotateZ(0deg);
+        color: orange;
+    }
+
+}
+
+.desactive:hover a {
+    color: orange;
+    transform: rotateZ(10deg);
+    transition: 0.3s;
+}
+
+.active:hover {
+    border-bottom: 4px solid orange;
+    transition: 0.3s;
+}
+
+.count h6 .span {
+    color: white;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.count {
+    color: grey;
+}
+
+.navbar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: -webkit-linear-gradient(top, grey, rgba(128, 128, 128, 0.582), transparent, transparent);
+}
+
+.navbar-brand {
+    /* background-color: whitesmoke; */
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* box-shadow: 8px 8px 0 1px orange; */
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.nav-link:hover {
+    color: whitesmoke
+}
+
+.containere svg {
+    padding-top: 150px;
+}
+
+.login:hover {
+    color: white;
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.89);
+    /* background-color: #c3d9dc; */
+}
+
+a img {
+    height: 150px;
+}
+
+.chat {
+    background-color: white;
+	top: 88%;
+    left: 102%;
+    top: 60%;
+    transform: rotateZ(45deg);
+    width: 50px;
+    padding: 15px 0 0 0px;
+    text-align: center;
+    height: 50px;
+    position: fixed;
+    border-radius: 10px;
+    transition: 1s;
+    z-index: 3000;
+    cursor: pointer;
+    margin-left: -100px;
+}
+
+.chat .mess {
+    color: rgb(0, 140, 255);
+    transform: rotateZ(-45deg);
+    font-size: 22px;
+    transition: 1s;
+}
+
+.chat:hover {
+    transform: rotateZ(0);
+    background-color: rgb(0, 140, 255);
+}
+
+.chat:hover .mess {
+    transform: rotateZ(0);
+    color: white;
+}
+
+
+
+.reseaux .fb,
+.reseaux .ins,
+.reseaux .skyp,
+.reseaux .link {
+    background-color: white;
+    color: rgb(139, 91, 0);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.reseaux .fb {
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 94px;
+}
+
+.reseaux .ins {
+    position: absolute;
+    margin-top: -160px;
+    margin-left: 80px;
+}
+
+.reseaux .link {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 82px;
+}
+
+.reseaux .skyp {
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 95px;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-button {
+    background-color: cadetblue;
+    border-radius: 3px;
+}
+
+.article {
+    margin-bottom: 30px;
+}
+
+.body .bod .article h5 {
+    color: whitesmoke;
+    font-size: 16px;
+}
+
+.body .bod .article h5 strong {
+    color: rgb(0, 247, 255);
+    font-family: 'arial';
+    font-size: 14px;
+}
+
+.body .bod .article p {
+    color: grey;
+    font-family: 'arial';
+    font-size: 14px;
+    word-spacing: 2px;
+}
+
+.body .bod .article ul li {
+    color: rgb(173, 173, 173);
+    font-family: 'arial';
+    font-size: 14px;
+    word-spacing: 2px;
+}

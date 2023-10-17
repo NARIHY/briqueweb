@@ -1,0 +1,470 @@
+@media screen and (max-width: 1199px) {
+    .popup .popuptext {
+        margin-left: 40px;
+
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .popup .popuptext {
+        margin-left: 140px;
+
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .popup .popuptext {
+        margin-left: 60px;
+
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .popup .popuptext {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 544px) {
+    .popup .popuptext {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .popup .popuptext {
+        margin-left: 40px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .popup .popuptext {
+        margin-left: 40px;
+    }
+}
+
+.popup {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; 
+  }
+ .popup .popuptext {
+    visibility: hidden;
+    width: 160px;
+    background-color:  #00800060;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    position: absolute;
+    z-index: 1;
+    left: 52%;
+    margin-left: 100px;
+    margin-top: 16px;
+    border-color: rgb(22, 61, 28);
+    border: 10px;
+  }
+.popup .show {
+    visibility: visible;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+  }
+
+
+.body {
+    padding-bottom: 80px;
+}
+
+@media only screen and (max-width: 576px) {
+
+    .navbar-nav .active a {
+        border-bottom: hidden;
+    }
+
+    .navbar-nav .active a:hover {
+        border-bottom: hidden;
+        transform: rotateZ(0deg);
+        color: orange;
+    }
+
+}
+
+.active a {
+    color: white;
+    border-bottom: 4px solid cadetblue;
+    border-radius: 50%;
+}
+
+.active a:hover {
+    border-bottom: 4px solid orange;
+    color: orange;
+    transform: rotateZ(10deg);
+    transition: 0.3s;
+}
+
+.desactive:hover a {
+    color: orange;
+    transform: rotateZ(10deg);
+    transition: 0.3s;
+}
+
+.containere2 {
+    position: absolute;
+}
+
+.loader2 {
+    max-width: 5rem;
+    height: auto;
+}
+
+.containere4 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: -100px;
+}
+
+.loader4 {
+    max-width: 6rem;
+    height: auto;
+}
+
+header {
+    background-image: url('../images/contact.webp');
+    background-size: 500px;
+    background-position: 80% 300px;
+    background-repeat: no-repeat;
+    background-color: rgb(6, 96, 99);
+    height: 100vh;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 480px;
+}
+
+.count h6 .span {
+    color: white;
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.count {
+    color: grey;
+}
+
+.navbar {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: -webkit-linear-gradient(top, grey, rgba(128, 128, 128, 0.582), transparent, transparent);
+}
+
+.navbar-brand {
+    /* background-color: whitesmoke; */
+    border-radius: 10px;
+    padding: 5px 10px;
+    /* box-shadow: 8px 8px 0 1px orange; */
+}
+
+.nav-link {
+    color: whitesmoke;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.nav-link:hover {
+    color: whitesmoke
+}
+
+.containere svg {
+    padding-top: 150px;
+}
+
+.login:hover {
+    color: white;
+}
+
+.loader {
+    max-width: 15rem;
+    width: 100%;
+    height: auto;
+    position: relative;
+    top: 50%;
+    left: 10%;
+    margin-left: -100px;
+    stroke-linecap: round;
+}
+
+circle {
+    fill: none;
+    stroke-width: 3.5;
+    -webkit-animation-name: preloader;
+    animation-name: preloader;
+    -webkit-animation-duration: 10s;
+    animation-duration: 10s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in-out;
+    animation-timing-function: ease-in-out;
+    transform-origin: 170px 170px;
+    will-change: transform;
+}
+
+circle:nth-of-type(1) {
+    stroke-dasharray: 550px;
+}
+
+circle:nth-of-type(2) {
+    stroke-dasharray: 500px;
+}
+
+circle:nth-of-type(3) {
+    stroke-dasharray: 450px;
+}
+
+circle:nth-of-type(4) {
+    stroke-dasharray: 300px;
+}
+
+circle:nth-of-type(1) {
+    -webkit-animation-delay: -0.8s;
+    animation-delay: -0.8s;
+}
+
+circle:nth-of-type(2) {
+    -webkit-animation-delay: 4s;
+    animation-delay: 4s;
+}
+
+circle:nth-of-type(3) {
+    -webkit-animation-delay: -0.38s;
+    animation-delay: -0.38s;
+}
+
+circle:nth-of-type(4) {
+    -webkit-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+@-webkit-keyframes preloader {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes preloader {
+    50% {
+        transform: rotate(360deg);
+    }
+}
+
+body {
+    background-color: rgba(0, 0, 0, 0.89);
+    /* background-color: #c3d9dc; */
+}
+
+a img {
+    height: 150px;
+}
+
+.chat {
+    background-color: white;
+	top: 88%;
+    left: 102%;
+    transform: rotateZ(45deg);
+    width: 50px;
+    padding: 15px 0 0 0px;
+    text-align: center;
+    height: 50px;
+    position: fixed;
+    border-radius: 10px;
+    margin-left: 10px;
+    transition: 1s;
+    z-index: 3000;
+    cursor: pointer;
+    margin-left: -100px;
+}
+
+.chat .mess {
+    color: rgb(0, 140, 255);
+    transform: rotateZ(-45deg);
+    font-size: 22px;
+    transition: 1s;
+}
+
+.chat:hover {
+    transform: rotateZ(0);
+    background-color: rgb(0, 140, 255);
+}
+
+.chat:hover .mess {
+    transform: rotateZ(0);
+    color: white;
+}
+
+
+
+.reseaux .fb,
+.reseaux .ins,
+.reseaux .skyp,
+.reseaux .link {
+    background-color: white;
+    color: rgb(139, 91, 0);
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 3px;
+}
+
+.reseaux .fb {
+    position: absolute;
+    margin-top: -200px;
+    margin-left: 94px;
+}
+
+.reseaux .ins {
+    position: absolute;
+    margin-top: -160px;
+    margin-left: 94px;
+}
+
+.reseaux .link {
+    position: absolute;
+    margin-top: -120px;
+    margin-left: 94px;
+}
+
+.reseaux .skyp {
+    position: absolute;
+    margin-top: -80px;
+    margin-left: 95px;
+}
+
+.form {
+    margin-top: 50px;
+}
+
+.form form input {
+    outline: none;
+    width: 100%;
+    border: none;
+    margin-bottom: 20px;
+    background-color: rgba(48, 48, 48, 0.123);
+    border-bottom: 2px solid cadetblue;
+    color: grey;
+    height: 40px;
+    padding: 10px 10px;
+    font-family: 'arial';
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.form form input:hover {
+    border-bottom: 2px solid rgba(95, 158, 160, 0.767);
+}
+
+.form form .message textarea {
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-family: 'arial';
+    outline: none;
+    border: none;
+    border-bottom: 2px solid cadetblue;
+    height: 200px;
+    width: 100%;
+    color: grey;
+    padding: 10px 10px;
+    border-bottom: cadetblue;
+    background: -webkit-linear-gradient(bottom, rgba(95, 158, 160, 0.342), rgba(95, 158, 160, 0.185), transparent, transparent, transparent);
+}
+
+
+.form form .message textarea:hover {
+    transition: 1s;
+    border-bottom: cadetblue;
+    background: -webkit-linear-gradient(bottom, rgba(95, 158, 160, 0.151), rgba(95, 158, 160, 0.068), transparent, transparent, transparent);
+}
+
+.form form .bouton button {
+    width: 200px;
+    height: 50px;
+    float: right;
+    outline: none;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bolder;
+    border: 2px solid orange;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+
+.form form .bouton button:hover {
+    transition: 0.5s;
+    background-color: orange;
+    border: 2px solid orange;
+}
+
+.cub {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    border-top: 8px solid cadetblue;
+    border-left: 8px solid cadetblue;
+    border-radius: 20px 0 0 0;
+    z-index: 1;
+    margin-top: -399px;
+    margin-left: -14px;
+}
+
+.contact_pub {
+    margin-top: 50px;
+}
+
+.contact_pub h3 {
+    color: white;
+}
+
+.contact_pub p {
+    color: grey;
+    font-size: 14px;
+    font-family: 'arial';
+    word-spacing: 2px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .form {
+        padding-top: 180px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: whitesmoke;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar-button {
+    background-color: cadetblue;
+    border-radius: 3px;
+}

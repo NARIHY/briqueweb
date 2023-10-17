@@ -1,0 +1,30 @@
+@media only screen and (max-width: 575px) {
+    .active a {
+        color: cadetblue;
+    }
+
+    .active {
+        border-bottom: none;
+    }
+
+    .desactive:hover a {
+        color: orange;
+        transform: rotateZ(0);
+        transition: 0.3s;
+    }
+
+    .active:hover {
+        border-bottom: none;
+        transition: 0.3s;
+    }
+
+    .navbar {
+        background: none;
+        background-color: rgb(54, 54, 54);
+        box-shadow: 0 0 50px 2px rgba(128, 128, 128, 0.226);
+    }
+
+    .navbar-collapse {
+        margin-top: 30px;
+    }
+}
