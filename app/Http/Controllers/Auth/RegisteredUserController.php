@@ -31,10 +31,11 @@ class RegisteredUserController extends Controller
     public function store(Request $request): RedirectResponse
     {
         //get if there are an user connected if not redirect to the home
+        /*
         if (!auth()->check()) {
             return redirect()->route('Public.home');
         }
-
+        */
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:'.User::class],
@@ -45,8 +46,11 @@ class RegisteredUserController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 1
+            'role' => 1,
+            'confirmation' => " ",
+            'info' => '0'
         ]);
+
 
         event(new Registered($user));
 

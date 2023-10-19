@@ -14,7 +14,7 @@
                 </div>
                 <div class="modal-body">
                     <x-guest-layout>
-                        <form method="POST" action="{{ route('register') }}">
+                        <form method="POST" action="{{ route('Admin.CompteManagement.register') }}">
                             @csrf
                             <!-- Name -->
                             <div>

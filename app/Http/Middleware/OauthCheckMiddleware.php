@@ -18,7 +18,7 @@ class OauthCheckMiddleware
     {
         // if user are connected
         if (Auth::check()) {
-            if (auth()->user()->info === 1 || auth()->user()->info === true) {
+            if (auth()->user()->info === 1) {
                 // Redirigez l'utilisateur vers une page spécifique (par exemple, 'verification')
                 return redirect()->route('Admin.index');
             }

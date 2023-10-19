@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\CompteManagementController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\OauthController;
@@ -62,6 +63,8 @@ Route::prefix('/Administration')->name('Admin.')->middleware(['auth', 'verified'
     Route::prefix('/Gestion-des-compte')->name('CompteManagement.')->group( function () {
         //listing of all users
         Route::get('/', [CompteManagementController::class, 'listing'])->name('listing');
+
+        Route::post('/register', [RegisteredUserController::class, 'store'])->name('register');
         //view of one user
         Route::get('/edition-52{userId}45', [CompteManagementController::class, 'edit'])->name('view');
         //edit one user

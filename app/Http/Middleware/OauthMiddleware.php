@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\User;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -18,6 +19,7 @@ class OauthMiddleware
     {
         // Vérifiez si l'utilisateur est connecté
         if (Auth::check()) {
+
             if (auth()->user()->info === 0 || auth()->user()->info === false) {
                 // Redirigez l'utilisateur vers une page spécifique (par exemple, 'verification')
                 return redirect()->route('Oauth.verify');

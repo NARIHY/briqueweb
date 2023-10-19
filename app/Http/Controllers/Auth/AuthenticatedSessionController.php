@@ -32,6 +32,13 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
 
         $request->session()->regenerate();
+        if(auth()->user()->info === 1) {
+            $user = auth()->user();
+            $users = User::findOrFail($user->id);
+            $users->update([
+                'info' => '0'
+            ]);
+        }
         //if success create the notification
         $user = auth::user();
         //create a randdom security code
@@ -58,11 +65,9 @@ class AuthenticatedSessionController extends Controller
         $user = auth()->user();
         $userTable = User::findOrFail($user->id);
         //return null the user token
-        if($user->info != 0) {
-            $userTable->update([
+        $userTable->update([
                 'info' => 0
-            ]);
-        }
+        ]);
         //log out the user
         Auth::guard('web')->logout();
 
