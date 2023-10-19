@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CompteManagementController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\OauthController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SiteController;
 use Illuminate\Support\Facades\Route;
@@ -50,9 +52,27 @@ Route::prefix('/')->name('Public.')->group(function () {
 });
 
 //administration routes
-Route::prefix('/Administration')->name('Admin.')->group(function () {
+Route::prefix('/Administration')->name('Admin.')->middleware(['auth', 'verified', 'oauth'])->group(function () {
     //home admin
     Route::get('/', [AdminController::class, 'index'])->name('index');
     //contact admin
     Route::get('/contact', [AdminController::class, 'contact'])->name('contact');
+
+    //Compte management
+    Route::prefix('/Gestion-des-compte')->name('CompteManagement.')->group( function () {
+        //listing of all users
+        Route::get('/', [CompteManagementController::class, 'listing'])->name('listing');
+        //view of one user
+        Route::get('/edition-52{userId}45', [CompteManagementController::class, 'edit'])->name('view');
+        //edit one user
+        Route::post('/edition-52{userId}45', [CompteManagementController::class, 'modify'])->name('modify');
+    });
+    //for Oauth 1.0
+
+
+});
+
+Route::prefix('/Security-Guard')->name('Oauth.')->middleware(['auth','verified' ,'oauthCheck'])->group( function () {
+    Route::get('/',[OauthController::class, 'verify'])->name('verify');
+    Route::post('/',[OauthController::class, 'post'])->name('post');
 });
