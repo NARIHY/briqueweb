@@ -1,3 +1,8 @@
+@php
+use Illuminate\Support\Facades\Auth;
+$user = Auth::user();
+
+@endphp
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,6 +22,7 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
   <!-- Vendor CSS Files -->
+  <link href="https://cdn.tailwindcss.com/2.2.15/tailwind.min.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link href="{{asset('admin/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
   <link href="{{asset('admin/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
@@ -53,13 +59,13 @@
             <i class="bi bi-search"></i>
           </a>
         </li><!-- End Search Icon-->
-
+        <!--
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-bell"></i>
             <span class="badge bg-primary badge-number">4</span>
-          </a><!-- End Notification Icon -->
+          </a>  End Notification Icon
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
             <li class="dropdown-header">
@@ -125,16 +131,19 @@
               <a href="#">Show all notifications</a>
             </li>
 
-          </ul><!-- End Notification Dropdown Items -->
+          </ul>
+           End Notification Dropdown Items
 
-        </li><!-- End Notification Nav -->
+        </li> End Notification Nav -->
 
+        <!--
         <li class="nav-item dropdown">
 
           <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
             <i class="bi bi-chat-left-text"></i>
             <span class="badge bg-success badge-number">3</span>
-          </a><!-- End Messages Icon -->
+          </a>
+           End Messages Icon
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
             <li class="dropdown-header">
@@ -191,21 +200,26 @@
               <a href="#">Show all messages</a>
             </li>
 
-          </ul><!-- End Messages Dropdown Items -->
+          </ul>
+           End Messages Dropdown Items
 
-        </li><!-- End Messages Nav -->
+        </li>
+         End Messages Nav -->
 
         <li class="nav-item dropdown pe-3">
 
           <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
             <img src="{{asset('admin/assets/img/profile-img.jpg')}}" alt="Profile" class="rounded-circle">
-            <span class="d-none d-md-block dropdown-toggle ps-2">Username</span>
+            <span class="d-none d-md-block dropdown-toggle ps-2">{{$user->name}}</span>
           </a><!-- End Profile Iamge Icon -->
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Username</h6>
-              <span>Actions</span>
+              <h6>{{$user->name}}</h6>
+              @php
+                $role = App\Models\Role::findOrFail($user->role);
+              @endphp
+              <span>{{$role->title}}</span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -242,10 +256,15 @@
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
-                <i class="bi bi-box-arrow-right"></i>
-                <span>Sign Out</span>
-              </a>
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <div class="dropdown-item d-flex align-items-center">
+                        <i class="bi bi-box-arrow-right"></i>
+                      <input type="submit" value="Se déconnecter" style="background: transparent; border:transparent">
+                    </div>
+
+                </form>
+
             </li>
 
           </ul><!-- End Profile Dropdown Items -->
@@ -262,7 +281,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
       <li class="nav-item">
-        <a class="nav-link " href="index.html">
+        <a class="nav-link collapsed" href="index.html">
           <i class="bi bi-grid"></i>
           <span>Dashboard</span>
         </a>
@@ -330,12 +349,12 @@
 
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#icons-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-gem"></i><span>Icons</span><i class="bi bi-chevron-down ms-auto"></i>
+            <i class="bi bi-person"></i><span>Gestion de compte</span><i class="bi bi-chevron-down ms-auto"></i>
         </a>
         <ul id="icons-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Bootstrap Icons</span>
+            <a href="{{route('Admin.CompteManagement.listing')}}">
+              <i class="bi bi-circle"></i><span>Liste des comptes</span>
             </a>
           </li>
 
