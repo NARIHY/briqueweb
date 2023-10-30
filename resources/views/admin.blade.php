@@ -23,7 +23,10 @@ $user = Auth::user();
 
   <!-- Vendor CSS Files -->
   <link href="https://cdn.tailwindcss.com/2.2.15/tailwind.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!--
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  -->
+  <link rel="stylesheet" href="{{asset('admin/assets/vendor/bootstrap/css/bootstrap.min.css')}}">
   <link href="{{asset('admin/assets/vendor/bootstrap-icons/bootstrap-icons.css')}}" rel="stylesheet">
   <link href="{{asset('admin/assets/vendor/boxicons/css/boxicons.min.css')}}" rel="stylesheet">
   <link href="{{asset('admin/assets/vendor/quill/quill.snow.css')}}" rel="stylesheet">
@@ -236,7 +239,7 @@ $user = Auth::user();
             </li>
 
             <li>
-              <a class="dropdown-item d-flex align-items-center" href="#">
+              <a class="dropdown-item d-flex align-items-center" href="{{route('profile.edit')}}">
                 <i class="bi bi-gear"></i>
                 <span>Account Settings</span>
               </a>
@@ -254,7 +257,9 @@ $user = Auth::user();
             <li>
               <hr class="dropdown-divider">
             </li>
-
+        @auth()
+        ss
+        @endauth
             <li>
                 <form action="{{route('logout')}}" method="post">
                     @csrf
@@ -390,7 +395,12 @@ $user = Auth::user();
           <span>Blank</span>
         </a>
       </li><!-- End Blank Page Nav -->
-
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="{{route('Admin.Newsletter.listing')}}">
+          <i class="bi bi-envelope"></i>
+          <span>Newsletter</span>
+        </a>
+      </li><!-- End Contact Page Nav -->
     </ul>
 
   </aside><!-- End Sidebar-->
@@ -430,6 +440,7 @@ $user = Auth::user();
 
   <!-- Vendor JS Files -->
   <script src="{{asset('admin/assets/vendor/apexcharts/apexcharts.min.js')}}"></script>
+  <script src="{{asset('admin/assets/vendor/bootstrap/js/bootstrap.min.js')}}"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="{{asset('admin/assets/vendor/chart.js/chart.umd.js')}}"></script>
   <script src="{{asset('admin/assets/vendor/echarts/echarts.min.js')}}"></script>

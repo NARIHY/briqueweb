@@ -45,7 +45,7 @@ class AuthenticatedSessionController extends Controller
         $longueur = 13; // Définissez la longueur de la chaîne aléatoire selon vos besoins
         $jeton = Str::random($longueur);
         //send the randdom security to the user
-        Notification::send($user, new OauthNotification($jeton));
+        //Notification::send($user, new OauthNotification($jeton));
         //hash
         $verify = hash('sha256', $jeton);
         //insert the random security into the user table

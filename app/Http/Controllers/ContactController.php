@@ -9,6 +9,11 @@ use Illuminate\Http\Request;
 
 class ContactController extends Controller
 {
+    /**
+     * Store inforamtion validated by users
+     * @param \App\Http\Requests\ContactRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function store(ContactRequest $request): RedirectResponse
     {
         $data = $request->validated();

@@ -39,6 +39,12 @@ class CompteManagementController extends Controller
         ]);
     }
 
+    /**
+     * Modify user information
+     * @param \App\Http\Requests\CompteManagementRequest $request
+     * @param string $userId
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function modify(CompteManagementRequest $request, string $userId): RedirectResponse
     {
         $user = User::findOrFail($userId);
